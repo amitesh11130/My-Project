@@ -22,17 +22,18 @@ public class File_Class {
 			BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 			System.out.println("Enter the file name");
 			
-			strName = br.readLine();//read line from keyboard
+			strName = br.readLine();      //read line from keyboard
 			System.out.println("Enter the file path");
 			
-			strPath = br.readLine();//read line from keyboard
+			strPath = br.readLine();      //read line from keyboard
 			
 			File file = new File(strPath+""+strName+".txt ");
 			//method createNewFile() method create blank file
 			file.createNewFile();
 			
 			FileWriter writer = new FileWriter(file);
-			writer.write("Hello World");
+			System.err.println("Enter text to store in file ");   //write text to store in file
+			writer.write(br.readLine());
 			writer.close();
 			
 			//try-catch-block
